@@ -1,0 +1,2 @@
+# SplashScreenDemo
+对齐国内厂商适配SplashScreen
