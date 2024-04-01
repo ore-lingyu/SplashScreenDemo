@@ -1,0 +1,18 @@
+Index: libs/WindowManager/Shell/src/com/android/wm/shell/startingsurface/SplashscreenContentDrawer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/libs/WindowManager/Shell/src/com/android/wm/shell/startingsurface/SplashscreenContentDrawer.java b/libs/WindowManager/Shell/src/com/android/wm/shell/startingsurface/SplashscreenContentDrawer.java
+--- a/libs/WindowManager/Shell/src/com/android/wm/shell/startingsurface/SplashscreenContentDrawer.java	(revision 94cb5ad9a7d6ac088804b1fbfa21907590ee7d9d)
++++ b/libs/WindowManager/Shell/src/com/android/wm/shell/startingsurface/SplashscreenContentDrawer.java	(revision 57c0b3698d1b2903c5fa53489be14f2e21129351)
+@@ -299,6 +299,9 @@
+                 Color.TRANSPARENT);
+         attrs.mSplashScreenIcon = safeReturnAttrDefault((def) -> typedArray.getDrawable(
+                 R.styleable.Window_windowSplashScreenAnimatedIcon), null);
++        if(null == attrs.mSplashScreenIcon){
++            attrs.mSplashScreenIcon = new ColorDrawable(Color.TRANSPARENT);
++        }
+         attrs.mBrandingImage = safeReturnAttrDefault((def) -> typedArray.getDrawable(
+                 R.styleable.Window_windowSplashScreenBrandingImage), null);
+         attrs.mIconBgColor = safeReturnAttrDefault((def) -> typedArray.getColor(
